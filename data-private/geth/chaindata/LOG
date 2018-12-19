@@ -1,0 +1,42 @@
+=============== Dec 18, 2018 (-02) ===============
+11:22:14.162634 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:22:14.173634 db@open opening
+11:22:14.175634 version@stat F·[] S·0B[] Sc·[]
+11:22:14.180634 db@janitor F·2 G·0
+11:22:14.180634 db@open done T·7.0004ms
+=============== Dec 18, 2018 (-02) ===============
+11:24:56.631634 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:24:56.635634 version@stat F·[] S·0B[] Sc·[]
+11:24:56.635634 db@open opening
+11:24:56.636634 journal@recovery F·1
+11:24:56.641634 journal@recovery recovering @1
+11:24:56.655634 memdb@flush created L0@2 N·9 S·546B "Hc\xc3..V\xb5\xb2,v3":"r\x00\x00..V\xb5\xb2,v5"
+11:24:56.659634 version@stat F·[1] S·546B[546B] Sc·[0.25]
+11:24:56.695634 db@janitor F·3 G·0
+11:24:56.695634 db@open done T·60.0035ms
+11:26:39.970634 db@close closing
+11:26:39.977634 db@close done T·7.0004ms
+=============== Dec 18, 2018 (-02) ===============
+11:26:42.373634 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:26:42.374634 version@stat F·[1] S·546B[546B] Sc·[0.25]
+11:26:42.374634 db@open opening
+11:26:42.375634 journal@recovery F·1
+11:26:42.376634 journal@recovery recovering @3
+11:26:42.386634 memdb@flush created L0@5 N·2 S·238B "Dat..ion,v11":"Las..der,v12"
+11:26:42.388634 version@stat F·[2] S·784B[784B] Sc·[0.50]
+11:26:42.404634 db@janitor F·4 G·0
+11:26:42.404634 db@open done T·30.0017ms
+11:27:21.910634 db@close closing
+11:27:21.915634 db@close done T·5.0002ms
+=============== Dec 18, 2018 (-02) ===============
+11:28:01.399634 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:28:01.400634 version@stat F·[2] S·784B[784B] Sc·[0.50]
+11:28:01.400634 db@open opening
+11:28:01.400634 journal@recovery F·1
+11:28:01.402634 journal@recovery recovering @6
+11:28:01.410634 memdb@flush created L0@8 N·2 S·238B "Dat..ion,v14":"Las..der,v15"
+11:28:01.412634 version@stat F·[3] S·1022B[1022B] Sc·[0.75]
+11:28:01.428634 db@janitor F·5 G·0
+11:28:01.428634 db@open done T·28.0016ms
+15:53:57.751999 db@close closing
+15:53:57.753999 db@close done T·2.0001ms
