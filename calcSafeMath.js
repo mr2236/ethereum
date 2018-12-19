@@ -1,0 +1,12 @@
+var calcContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"isAlive","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_a","type":"uint256"},{"name":"_b","type":"uint256"}],"name":"arithmetics","outputs":[{"name":"o_sum","type":"uint256"},{"name":"o_product","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]);
+var calc = calcContract.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610249806100606000396000f300608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634136aa351461005c57806341c0e1b5146100875780638c12d8f01461009e575b600080fd5b34801561006857600080fd5b506100716100f0565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b5061009c6100f9565b005b3480156100aa57600080fd5b506100d3600480360381019080803590602001909291908035906020019092919050505061018a565b604051808381526020018281526020019250505060405180910390f35b60006001905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610188576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b6000806101a083856101be90919063ffffffff16565b91506101b583856101df90919063ffffffff16565b90509250929050565b60008082840190508381101515156101d557600080fd5b8091505092915050565b60008060008414156101f45760009150610216565b828402905082848281151561020557fe5b0414151561021257600080fd5b8091505b50929150505600a165627a7a72305820897d6043e0bd817204d91f65e0e8b1123a9757f8746de4a2ac90e5e4e6111ad50029', 
+     gas: '4700000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })
