@@ -1,0 +1,415 @@
+##################
+Dia: 18/12/2018
+##################
+
+
+Filme: o jogo da Imitação - sobre Alan Turing
+
+Brasileiros na Fundação Ethereum
+Everton Fraga - Mist
+Alex Van der Sande - Mist e Universal Login
+
+
+Livro do Ethereum
+
+https://github.com/ethereumbook
+
+
+Geth
+https://geth.ethereum.org/downloads/
+
+No cmd / command prompt / terminal
+geth version
+
+Criar diretorio 
+C:\ETH
+
+No Command Prompt 
+CD C:\ETH
+
+
+Instalações
+https://code.visualstudio.com/download
+
+
+code .
+
+criar o arquivo 
+genesis.json
+
+{
+    "difficulty"    : "0x20000",
+    "gasLimit"  : "0x800000",
+    "alloc"         : {},
+    "config"    : {
+        "chainId": 100,
+        "homesteadBlock": 0,
+        "eip155Block": 0,
+        "eip158Block": 0
+    }
+}
+
+
+No terminal
+No seu diretorio
+CD C:\ETH
+
+Inicializando o Blockchain
+geth --datadir "data-private" init "genesis.json"  
+
+
+Diretorio do DAG:
+C:\Users\Dataprev\AppData\EtHash
+
+Console Geth
+Windows
+geth --datadir "data-private" console
+
+Linux, estando no diretório do GETH
+./geth --datadir "/home/eth/data-private"  console
+
+exit
+
+Executar Geth sem o console
+geth --datadir ".\data-private" 
+
+
+Nova janela de command 
+Ir para o diretorio
+CD C:\ETH
+
+ATTACH
+Geth no 2 terminal, para se comunicar com o primeiro
+geth attach ipc:\\.\pipe\geth.ipc
+
+Criar conta
+personal
+
+personal.newAccount("teste")
+
+Iniciar a mineracao
+miner.start(1)
+
+
+Saldo da conta
+eth.getBalance(eth.accounts[0])
+
+Em Ether
+web3.fromWei(eth.getBalance(eth.accounts[0]),"ether")
+
+Parar a mineração
+miner.stop()
+
+Criar 2a conta (conta 1)
+personal.newAccount("teste")
+
+Saldo da Conta 1
+web3.fromWei(eth.getBalance(eth.accounts[1]),"ether")
+
+Transferencia entre contas
+eth.sendTransaction({from:eth.accounts[0], to:eth.accounts[1], value: web3.toWei(100, "ether")})
+
+Desbloquear a conta
+personal.unlockAccount(eth.accounts[0], "teste", 0)
+
+
+Saldo pelo endereço
+personal
+web3.fromWei(eth.getBalance("0xab2116cadc90ed02ea3566e6fa99fae1c298d011"),"ether")
+
+
+Exercício 1
+Criar nova conta e transferir 99 para ela
+
+Exercicio 2
+Transferir 150 da conta 1 para a conta 2
+
+
+Para saber os comandos de mineração
+miner. TAB TAB
+
+
+Hash
+https://www.tools4noobs.com/online_tools/hash/
+SHA256
+
+
+Nós da rede
+https://www.ethernodes.org/network/1
+
+http://ethdocs.org/en/latest/ethereum-clients/
+
+https://coinmarketcap.com/currencies/ethereum/
+
+https://etherconverter.online/
+
+https://ethgasstation.info/
+
+https://etherscan.io/
+
+
+
+**********************************************
+Rede dos alunos
+**********************************************
+
+Inicializando o Blockchain
+geth --datadir "data-net" init "genesis.json" 
+
+Execucao
+geth --datadir "data-net" -identity SOL
+
+ATTACH
+Geth no 2 terminal, para se comunicar com o primeiro
+geth attach ipc:\\.\pipe\geth.ipc
+
+Criar conta
+personal.newAccount("teste")
+
+admin.nodeInfo.enode
+
+**********************************************
+IPs Rede Cabo
+**********************************************
+Sol: 10.122.26.139
+"enode://e34dedd1c87028224c5a21fd1f22ce63e6d1c8af9b2aee2ad03f86ac3cc379d333d5e058a8e6dbe196c2ed8eed36d37594b64b69ebc25d70a6d9e268832b7f54@10.122.26.139:30303"
+
+SAULO 10.122.26.99
+"enode://d3c6c31da580644870901d672fae3131e148eb955c8643f26c76814edc01b549e5e4a81606fabe682fd23b059152c361784e86e0472854f33f8d2baca3e191d6@10.122.26.99:30303"
+
+Thiago: 10.122.26.46
+"enode://80a9326a34e111388c2736e0300ed5188363c0ab1d6800473f1b8fc4bc690994e80517913536fff03e307dda1dccca5f0c9dcfabdb4284b229f3a70d35f24974@10.122.26.46:30303"
+
+Fabiano : "enode://4ffc813215bdfd0f9b0b558c1772dbbb0eca4c0d6a3ae65740fc37508dca8109a1503c5fbdb66c95df0cc0a07ae5a8bcb65a621a279c4c15ac94ef82851b24a6@10.122.26.100:30303"  - address : 0x84214d28dc7633097d4ee276ea9f282bd5774480
+
+rocha: "enode://0e3053537a60cceb572ec81d6c08ec1df059419044c5e61cb00fa7d5be28653ccc8c75bb64282d564726bc6300ea35d128f10ca272ff28c77ec3a8993d2c2dc4@10.122.26.29:30303 - address 0xb91aa6d20e284149914ac0ba0c003d5bf351a39b"
+
+Emerson: "enode://7ee0a969721125b19d79ce1c15e3bb2822762f897652824a4ff9327f873ca93da0e54c7bbd593a0fe5cdf5e81ed9f29e0526205ddf3aa310fe0c401f5c0b27f2@10.122.26.27:30303 - account: 0x65d4e2c8e62c435324f4ab69f1f9e870fce355b3"
+
+Poswar: admin.addPeer("enode://dfd3ecd7e947f2285a78616dfd7dd270329341e3ac636ac8d905025314493ab9ace3ef96bb60ba4e4608fb1de46d929bae4ff8c476ef21f03baa3001fbafd064@10.122.26.155:30303") - address "0x1ce9c7f648d40969a3403471f7e16db01a49b57c"
+
+NELSON: 10.122.26.21 - enode://eb7880aa1feb1d28ffecb9af57f512e7d4a60bbe89ca056ccf223c229421e8005315bc678765b9f6886926bf60e7597c50ff56248e6f650fe631ef1ef391f5dc@10.122.26.21:30303
+
+FELIPE: 10.122.26.52 
+enode://a00f394d55e225e7bf547201ff143ecc1b1de62746ea87f8c5bd1d8dc818c2dcafad22d9d590f8a4b97be7072afa18dc68869bec7a36bb2362f44989fb791055@10.122.26.52:30303
+
+RODRIGO: 10.122.26.168 - enode://8ccc798e3d3860e9824cbccd0e7b906f50bd5420a2ce80a7d935f0a5cc69ada3c807d01c75faf834303438d8608da956200fcd0d5d674910b233fa7b63c5b286@10.122.26.168:30303
+
+RAFAEL C: 10.122.25.151 - enode://87ae6f88aba8e2de6726db220fe71c3e987f0254f94721b715fc03dd61dd8d1405aa9076cb315f987c102425f064f7a6ad79e09c10f772e6b057f45edab60cd0@10.122.25.151:30303
+admin.addPeer("enode://87ae6f88aba8e2de6726db220fe71c3e987f0254f94721b715fc03dd61dd8d1405aa9076cb315f987c102425f064f7a6ad79e09c10f772e6b057f45edab60cd0@10.122.25.151:30303")
+
+Samyr: 10.122.26.67 - enode://f8968c6bc4921c415e3b1eb237aef3d86ebc7d6f3b93ecf23ea03daa37d2d8cf4f717e27a7fe4df38538c48759ae35f17408432793f1f552c13a2d77c9b6bebc@10.122.26.67:30303
+
+ANDERSON: 10.122.26.36 - enode://5189c7db0c1ad973818a4f6efbf3161486a1be8b50703978bac618e25092a3ffc304b45e6e4200f82a7139ddcb9e0a6e33e49df37a816fa1e6818272ca0a875b@10.122.26.36:30303 - Address: 0x401bbb304ea54b89c46446931b65f414e5444cc5
+
+Oscar: 10.122.26.169
+"enode://27eccdb10ef61cf881649618693104dd7965b5331998aba7dd25703aef756958f2802a035459aa0f2370c7b476c5a67d8fc9bec1f8383d90f455d3c76b7cfcd4@10.122.26.169:30303"
+
+Henrique: 10.2.103.134 - endereço: "0xbc25003e30dbdd3e95202219ffabbe1f558cf3f3"
+"enode://ae887ffc1ae77afec80ff9cca92891517231cc5d162b923b8693e088635dc4203164f632db1116c36b472d5b0def49cc15a9e14bcc229cc226c39a90b38c41ac@10.2.103.134:30303"
+
+**********************************************
+IPs Rede sem fio
+**********************************************
+quintanilha(wifi):enode://971cf51ea8b691b6cea218142eedc35405a1558b37e9b0172bae8ac15c6cf0dbce44011efe9c85b8cd0a91a3412ff8bee6cafee9f2db7ad413cd42c6443cc30e@10.122.241.237:30303
+
+Humbertho:  enode://4a66fc2566c34bafc44e392dcb141a297fc1570ee19892d9ea720188ef776c7d6bbca26c666ea83ebfbc6cfb443347de4f289a8be7f6331d9e755da16e57d5ee@10.122.241.207:30303
+
+Kelvin:  "enode://b8097f3cf5b2da82c3b92d9d60cc770b40be726122524b9ad76fcab3888b55833828e956abb5841b0884fe70ce27be5597c52fad78db155421db17a848bb71b6@10.122.241.97:30303"
+
+Brazao: "enode://f6a19fe0d3c4ce6c05490c4c7d0ab05aa3148ba8c09f7671ed4d0544746ba83477a9b3c4b44b4897d1638f59c8ea0418c7a41f468cc562a9dddaa7bc4fb8798f@10.122.241.130:30303"
+
+
+admin.addPeer("enode")
+
+Verificando a rede
+net.peerCount;
+admin.peers;
+
+miner.start()
+
+web3.fromWei(eth.getBalance(eth.accounts[0]),"ether")
+
+
+**********************************************
+Endereços/contas Rede CABO
+**********************************************
+
+Sol: 0x3af6808c301395f00dd602d93ebbd1314371cfe3
+web3.fromWei(eth.getBalance("0x3af6808c301395f00dd602d93ebbd1314371cfe3"),"ether")
+Samyr: 0xf5bf74ba760a054f2b4d56ee71759d2a8bca3500
+Saulo:0xadc0baf69623abb2384b3af277e0553806357f6d
+web3.fromWei(eth.getBalance("0xadc0baf69623abb2384b3af277e0553806357f6d"),"ether")
+Nelson: 0x93c9167b32ab7be40c6010346c7c61dbc5eb29fa
+Emerson: 0x65d4e2c8e62c435324f4ab69f1f9e870fce355b3
+web3.fromWei( eth.getBalance("0x65d4e2c8e62c435324f4ab69f1f9e870fce355b3") , "ether")
+rocha: web3.fromWei(eth.getBalance( "0xb91aa6d20e284149914ac0ba0c003d5bf351a39b" ),"ether")
+Thiago: 0x7b3a59a30705b9dec0fa739bbfdc73a99bf27c4a
+web3.fromWei(eth.getBalance("0x7b3a59a30705b9dec0fa739bbfdc73a99bf27c4a"),"ether")
+Henrique: 0xbc25003e30dbdd3e95202219ffabbe1f558cf3f3
+web3.fromWei(eth.getBalance("0xbc25003e30dbdd3e95202219ffabbe1f558cf3f3"),"ether")
+RafaelC:0x14ae4d38f4cd0dc3e70af48b827912f40ac83d02
+RODRIGO: 0xedaf413b62c747d8eb6cec2e02ec66a4c1b49d9a
+FELIPE: 0x46fdc1281066a3fd2d200b9d678a40cb06af270b
+web3.fromWei(eth.getBalance("0xedaf413b62c747d8eb6cec2e02ec66a4c1b49d9a"),"ether")
+
+
+
+
+**********************************************
+Endereços/contas Rede SEM FIO
+**********************************************
+
+Kelvin: 0x447edeef25bdc0b062d075b37ddc18226ec06c60
+Brazao: 0x3968452eed4b354840c901ab640a5871bfe3b012
+cquinta: 0xd5078aae3be99021e75cab208bc9750e6c18a583
+
+function showBalanceAccounts() {
+var allAccountsNetwork = [];
+allAccountsNetwork.push({ name: "Humbertho", address: "0xd61546aedef2601d08b8e96b678c257c7532104a"});
+allAccountsNetwork.push({ name: "Brazao", address: "0x3968452eed4b354840c901ab640a5871bfe3b012"});
+allAccountsNetwork.push({ name: "Kelvin", address: "0x447edeef25bdc0b062d075b37ddc18226ec06c60"});
+allAccountsNetwork.push({ name: "cquinta", address: "0xd5078aae3be99021e75cab208bc9750e6c18a583"});
+allAccountsNetwork.forEach(function( person) {  
+    console.log(person.name, web3.fromWei( eth.getBalance(person.address) , "ether") )
+});
+}
+
+
+
+Para ler um script:
+Criar arquivo checkBalances.js
+
+function checkBalances() {
+        var ret = [];
+        var accountAddresses = [
+           { name: "Sol", address: "0x3af6808c301395f00dd602d93ebbd1314371cfe3"},
+{ name: "rocha", address: "0xb91aa6d20e284149914ac0ba0c003d5bf351a39b"},
+{ name: 'samyr', address: '0xf5bf74ba760a054f2b4d56ee71759d2a8bca3500'},
+{ name: 'saulo', address: '0xadc0baf69623abb2384b3af277e0553806357f6d'},
+{ name: 'Fabiano', address: '0x84214d28dc7633097d4ee276ea9f282bd5774480'},
+{ name: 'Anderson', address: '0x401bbb304ea54b89c46446931b65f414e5444cc5'},
+{ name: 'Emerson', address: '0x65d4e2c8e62c435324f4ab69f1f9e870fce355b3'},
+{ name: 'Poswar', address: '0x1ce9c7f648d40969a3403471f7e16db01a49b57c'},
+{ name: "OSCAR", address: "0x04aa96b33e2414b125cdc844befa66e7fc85dfb3"},
+{ name: 'Nelson', address: '0x93c9167b32ab7be40c6010346c7c61dbc5eb29fa'},
+{ name: 'Thiago', address: '0x7b3a59a30705b9dec0fa739bbfdc73a99bf27c4a'},
+{ name: 'FELIPE', address: '0x46fdc1281066a3fd2d200b9d678a40cb06af270b'},
+{ name: 'RafaelC', address: '0x14ae4d38f4cd0dc3e70af48b827912f40ac83d02'},
+{ name: 'RODRIGO', address: '0xedaf413b62c747d8eb6cec2e02ec66a4c1b49d9a'},
+{ name: 'Henrique', address: '0xbc25003e30dbdd3e95202219ffabbe1f558cf3f3'}
+        ];
+        accountAddresses.forEach(function(account) {
+            web3.eth.getBalance(account.address, function (err, balance) {
+                ret.push({
+                    account: account.name,
+                    balance: web3.fromWei(balance, "ether") + ' ether'
+                });
+            });
+        });
+        return ret;
+}
+
+Na janela do Attach
+loadScript("./checkBalances.js");
+
+checkBalances()
+
+//Emerson
+Criar arquivo showBalanceAccounts.js
+
+
+
+function showBalanceAccounts() {
+    var allAccountsNetwork = [
+        { name: "Sol", address: "0x3af6808c301395f00dd602d93ebbd1314371cfe3"},
+        { name: "rocha", address: "0xb91aa6d20e284149914ac0ba0c003d5bf351a39b"},
+        { name: 'samyr', address: '0xf5bf74ba760a054f2b4d56ee71759d2a8bca3500'},
+        { name: 'saulo', address: '0xadc0baf69623abb2384b3af277e0553806357f6d'},
+        { name: 'Fabiano', address: '0x84214d28dc7633097d4ee276ea9f282bd5774480'},
+        { name: 'Anderson', address: '0x401bbb304ea54b89c46446931b65f414e5444cc5'},
+        { name: "OSCAR", address: "0x04aa96b33e2414b125cdc844befa66e7fc85dfb3"},
+        { name: 'Emerson', address: '0x65d4e2c8e62c435324f4ab69f1f9e870fce355b3'},
+        { name: 'Nelson', address: '0x93c9167b32ab7be40c6010346c7c61dbc5eb29fa'},
+        { name: 'Thiago', address: '0x7b3a59a30705b9dec0fa739bbfdc73a99bf27c4a'},
+        { name: 'FELIPE', address: '0x46fdc1281066a3fd2d200b9d678a40cb06af270b'},
+        { name: 'RafaelC', address: '0x14ae4d38f4cd0dc3e70af48b827912f40ac83d02'},
+        { name: 'Henrique', address: '0xbc25003e30dbdd3e95202219ffabbe1f558cf3f3'},
+        { name: 'Poswar', address: '0x1ce9c7f648d40969a3403471f7e16db01a49b57c' },
+        { name: 'RODRIGO', address: '0xedaf413b62c747d8eb6cec2e02ec66a4c1b49d9a' }
+    ];
+
+    allAccountsNetwork.sort(function(a, b) {
+        return a.name > b.name ? 1 : (a.name < b.name ? -1 : 0);
+    });
+    
+    for(var i = 0; i < allAccountsNetwork.length; i++) {
+        var person = allAccountsNetwork[i];
+        var showLabel = person.name.toUpperCase();
+        while(showLabel.length < 10) {
+            showLabel = showLabel.concat(" ");
+        }
+        console.log(showLabel,'- Saldo: ', web3.fromWei( eth.getBalance(person.address) , "ether"));
+    }
+    return '';
+}
+
+
+Na janela do Attach
+loadScript("./showBalanceAccounts.js");
+
+showBalanceAccounts()
+
+
+https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options
+https://ethereum.stackexchange.com/questions/28703/full-list-of-geth-terminal-commands
+
+miner.getHashrate()
+
+
+eth.sendTransaction({from:eth.accounts[0], to:"conta", value: web3.toWei(10, "ether")})
+
+
+hash transacao, 500 para sol
+0x535092fd3dcc474e1722ddaf9cc5d8340f537f964b9bf3d1826de436a98cbeab
+eth.getTransaction( "0x535092fd3dcc474e1722ddaf9cc5d8340f537f964b9bf3d1826de436a98cbeab" )
+
+eth.getTransaction("0x535092fd3dcc474e1722ddaf9cc5d8340f537f964b9bf3d1826de436a98cbeab")
+
+hash transacao, 100 para sol
+"0x874458f5f8dcb5994d23b63a803080e0ee2748d1dc6ba8887a83f81696609b6c"
+"0x06f0c50cf39ab6e5921701a2d4bf868b64c8bcac4c9f5464b47b09f04ee029a2"
+
+eth.blockNumber
+
+Matéria sobre Blockchain no Jornal Hoje - 17/dez/2018
+https://globoplay.globo.com/v/7239246/
+
+
+
+Mineração Bitcoin
+ASIC - Application-Specific Integrated Circuit 
+Computador específico para mineração - double SHA256
+https://en.wikipedia.org/wiki/Application-specific_integrated_circuit
+https://en.bitcoin.it/wiki/Mining
+https://en.bitcoin.it/wiki/Mining_hardware_comparison
+
+
+Hash rate – How many hashes per second the Bitcoin miner can make
+
+
+Mineração Ethereum - GPU
+https://ethereum.gitbooks.io/frontier-guide/content/gpu.html
+
+https://99bitcoins.com/ethereum-mining/
+https://www.bitpremier.com/ethereum/mining-software
+
+Ethminer
+https://github.com/ethereum-mining/ethminer
+https://github.com/ethereum-mining/ethminer/releases
+
+https://bitbonkers.com/
+
+
+
+
