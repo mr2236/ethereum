@@ -40,3 +40,40 @@
 11:28:01.428634 db@open done T·28.0016ms
 15:53:57.751999 db@close closing
 15:53:57.753999 db@close done T·2.0001ms
+=============== Dec 19, 2018 (-02) ===============
+11:08:28.177941 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:08:28.184941 version@stat F·[3] S·1022B[1022B] Sc·[0.75]
+11:08:28.184941 db@open opening
+11:08:28.185941 journal@recovery F·1
+11:08:28.189941 journal@recovery recovering @9
+11:08:28.224941 memdb@flush created L0@11 N·3544 S·181KiB ",o-..m\xc7\xff,v3553":"\xf0\xea\x12..Y\x95e,v3560"
+11:08:28.227941 version@stat F·[4] S·182KiB[182KiB] Sc·[1.00]
+11:08:28.242941 db@janitor F·6 G·0
+11:08:28.242941 db@open done T·58.0033ms
+11:08:28.242941 table@compaction L0·4 -> L1·0 S·182KiB Q·3561
+11:08:28.263941 table@build created L1@14 N·2377 S·134KiB ",o-..m\xc7\xff,v3553":"\xf0\xea\x12..Y\x95e,v3560"
+11:08:28.263941 version@stat F·[0 1] S·134KiB[0B 134KiB] Sc·[0.00 0.00]
+11:08:28.266941 table@compaction committed F-3 S-48KiB Ke·0 D·1180 T·23.0013ms
+11:08:28.267941 table@remove removed @11
+11:08:28.268941 table@remove removed @8
+11:08:28.269941 table@remove removed @5
+11:08:28.270941 table@remove removed @2
+=============== Dec 19, 2018 (-02) ===============
+16:10:58.372279 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:10:58.376279 version@stat F·[0 1] S·134KiB[0B 134KiB] Sc·[0.00 0.00]
+16:10:58.376279 db@open opening
+16:10:58.377279 journal@recovery F·1
+16:10:58.379280 journal@recovery recovering @12
+16:10:58.562298 memdb@flush created L0@15 N·31627 S·1MiB "Dat..ion,v3562":"r\x00\x00..\b\x90W,v35184"
+16:10:58.570299 version@stat F·[1 1] S·1MiB[1MiB 134KiB] Sc·[0.25 0.00]
+16:10:58.601302 db@janitor F·4 G·0
+16:10:58.602302 db@open done T·226.0129ms
+16:10:58.689311 table@compaction L0·1 -> L1·1 S·1MiB Q·35190
+16:10:58.763318 table@build created L1@18 N·23466 S·1MiB ",o-..m\xc7\xff,v3553":"\xf0\xea\x12..Y\x95e,v3560"
+16:10:58.763318 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+16:10:58.767318 table@compaction committed F-1 S-430KiB Ke·0 D·10538 T·78.0044ms
+16:10:58.768319 table@remove removed @15
+16:10:58.769319 table@remove removed @14
+=============== Dec 20, 2018 (-02) ===============
+09:58:44.002749 db@close closing
+09:58:44.024751 db@close done T·22.0013ms

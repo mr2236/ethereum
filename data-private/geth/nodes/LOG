@@ -36,3 +36,38 @@
 11:28:37.599634 table@remove removed @2
 15:53:57.758000 db@close closing
 15:53:57.760000 db@close done T·2.0001ms
+=============== Dec 19, 2018 (-02) ===============
+11:08:28.327941 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:08:28.330941 version@stat F·[0 1] S·482B[0B 482B] Sc·[0.00 0.00]
+11:08:28.330941 db@open opening
+11:08:28.330941 journal@recovery F·1
+11:08:28.330941 journal@recovery recovering @6
+11:08:28.394941 memdb@flush created L0@9 N·23935 S·204KiB "n:\x00..ail,v24176":"n:\x93..ail,v255"
+11:08:28.395941 version@stat F·[1 1] S·204KiB[204KiB 482B] Sc·[0.25 0.00]
+11:08:28.408941 db@janitor F·4 G·0
+11:08:28.408941 db@open done T·78.0044ms
+11:08:28.709941 table@compaction L0·1 -> L1·1 S·204KiB Q·24182
+11:08:28.721941 table@build created L1@12 N·8 S·484B "n:\x00..ail,v24176":"version,v1"
+11:08:28.721941 version@stat F·[0 1] S·484B[0B 484B] Sc·[0.00 0.00]
+11:08:28.724941 table@compaction committed F-1 S-204KiB Ke·0 D·23935 T·15.0009ms
+11:08:29.001941 table@remove removed @9
+11:08:29.001941 table@remove removed @8
+=============== Dec 19, 2018 (-02) ===============
+16:10:58.792321 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:10:58.794321 version@stat F·[0 1] S·484B[0B 484B] Sc·[0.00 0.00]
+16:10:58.794321 db@open opening
+16:10:58.794321 journal@recovery F·1
+16:10:58.794321 journal@recovery recovering @10
+16:10:58.870329 memdb@flush created L0@13 N·26152 S·223KiB "n:\x00..ail,v50333":"n:\x93..ail,v24192"
+16:10:58.871329 version@stat F·[1 1] S·223KiB[223KiB 484B] Sc·[0.25 0.00]
+16:10:58.886330 db@janitor F·4 G·0
+16:10:58.886330 db@open done T·92.0053ms
+16:10:59.213363 table@compaction L0·1 -> L1·1 S·223KiB Q·50335
+16:10:59.241366 table@build created L1@16 N·8 S·488B "n:\x00..ail,v50333":"version,v1"
+16:10:59.243366 version@stat F·[0 1] S·488B[0B 488B] Sc·[0.00 0.00]
+16:10:59.265368 table@compaction committed F-1 S-223KiB Ke·0 D·26152 T·52.0029ms
+16:10:59.562398 table@remove removed @13
+16:10:59.562398 table@remove removed @12
+=============== Dec 20, 2018 (-02) ===============
+09:58:44.032752 db@close closing
+09:58:44.037752 db@close done T·5.0002ms
